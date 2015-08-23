@@ -11,15 +11,19 @@ AMDiS programming in September 2015.
 We provide a CMake configuration file CMakeLists.txt and we recommend 
 an configuration in a separate directory:
 
-> cd build
-> cmake -DAMDIS_DIR=/usr/local/amdis/share/amdis ..
-> make
-> cd ..
+```
+cd build
+cmake -DAMDIS_DIR=/usr/local/amdis/share/amdis ..
+make
+cd ..
+```
 
 # Run the examples
 
 Run the examples by passing the init-file as first argument.
 
-> ./build/PROG init/INITFILE
+```
+./build/PROG init/INITFILE
+```
 
 
