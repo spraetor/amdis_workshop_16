@@ -1,2 +1,25 @@
-# amdis_workshop
-AMDiS workshop
+# AMDiS Workshop 2015
+
+AMDiS is a finite element framework for adaptive multidimensional
+simulations.
+
+This repository contains all necessary data for the workshop on 
+AMDiS programming in September 2015.
+
+## Build the examples
+
+We provide a CMake configuration file CMakeLists.txt and we recommend 
+an configuration in a separate directory:
+
+> cd build
+> cmake -DAMDIS_DIR=/usr/local/amdis/share/amdis ..
+> make
+> cd ..
+
+# Run the examples
+
+Run the examples by passing the init-file as first argument.
+
+> ./build/PROG init/INITFILE
+
+
