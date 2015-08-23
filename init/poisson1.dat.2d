@@ -1,0 +1,19 @@
+dimension of world: 2
+
+mesh->macro file name:    ./macro/macro1.2d
+mesh->global refinements: 10
+
+poisson->mesh:       mesh
+poisson->feSpace[0]: P1
+poisson->dim:        2
+poisson->components: 1
+ 
+poisson->solver:                 cg
+poisson->solver->max iteration:  1000
+poisson->solver->tolerance:      1.e-8
+poisson->solver->left precon:    diag
+
+poisson->output->filename:        ./output/poisson1.2d
+poisson->output->ParaView format: 1
+poisson->output->ParaView mode:   1
+
