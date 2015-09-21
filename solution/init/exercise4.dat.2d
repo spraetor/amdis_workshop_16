@@ -1,0 +1,44 @@
+dimension of world:             2
+
+mesh->macro file name:    ./macro/kanal.2d
+mesh->global refinements: 7
+
+ns->mesh:         mesh
+ns->dim:          2
+ns->components:   3
+ns->feSpace[0]:   P2
+ns->feSpace[1]:   P2
+ns->feSpace[2]:   P1
+ns->name:        [u0, u1, p] 
+
+parameters->nu: 0.001
+parameters->vel: 1
+
+ns->solver:                 direct
+ns->solver->tolerance:      1.e-10
+
+adapt->timestep:               0.1
+adapt->start time:             0.0
+adapt->end time:               10
+
+% write velocity to a file
+ns->output->num vectors: 1
+ns->output->vector[0]->components: [0,1]
+ns->output->vector[0]->namne:      vel
+ns->output->vector[0]->filename:   output/velocity.2d
+ns->output->vector[0]->ParaView vector format: 1
+ns->output->vector[0]->ParaView animation: 1
+ns->output->vector[0]->write every i-th timestep:   1
+ns->output->vector[0]->write vector as 3d vector: 1
+ns->output->vector[0]->append index:                1
+ns->output->vector[0]->index length:                6
+ns->output->vector[0]->index decimals:              3
+
+% qwrite pressure to a file
+ns->output[2]->ParaView format: 1
+ns->output[2]->ParaView animation: 1
+ns->output[2]->filename: output/pressure.2d
+ns->output[2]->write every i-th timestep:   1
+ns->output[2]->append index:                1
+ns->output[2]->index length:                6
+ns->output[2]->index decimals:              3

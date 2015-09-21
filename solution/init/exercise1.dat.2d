@@ -1,0 +1,18 @@
+dimension of world: 2
+
+mesh_name->macro file name:    ./macro/mesh.2d
+mesh_name->global refinements: 10
+
+poisson->mesh:       mesh_name
+poisson->dim:        2
+poisson->components: 1
+poisson->feSpace[0]: P1
+poisson->name[0]:    u
+ 
+poisson->solver:                 cg
+poisson->solver->max iteration:  1000
+poisson->solver->tolerance:      1.e-8
+poisson->solver->left precon:    diag
+
+poisson->output->filename:        ./output/exercise1.2d
+poisson->output->ParaView format: 1
