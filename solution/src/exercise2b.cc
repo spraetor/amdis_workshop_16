@@ -61,7 +61,7 @@ struct G : AbstractFunction<double, WorldVector<double> >
 {
   double operator()(WorldVector<double> const& x) const 
   {
-    return std::exp(x*x) + std::cos(10.0 * (x[0] + x[1]));
+    return std::exp(-10.0*(x*x));
   }
 };
 
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
   addSOT(opLaplace, 1.0);
   
   Operator opF(prob.getFeSpace());
-  auto f = dot(X(), X()) + 1.0;
+  auto f = -(400.0*(X()*X()) - 40.0)*exp(-10.0*(X()*X()));
   addZOT(opF, f); // f(x)
   
   // ===== add operators to problem =====
@@ -97,7 +97,7 @@ int main(int argc, char* argv[])
   DOFVector<double>& U = *prob.getSolution(0);
   DOFVector<double> ErrVec(U), UExact(U);
   
-  auto u_exact = exp(X()*X()) + cos(10.0*(X(0) + X(1)));
+  auto u_exact = exp(-10.0*(X()*X()));
   
   std::vector<std::array<double, 2>> error_vec_L2;
   std::vector<std::array<double, 2>> error_vec_H1;

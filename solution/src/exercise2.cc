@@ -20,7 +20,7 @@ struct G : AbstractFunction<double, WorldVector<double> >
 {
   double operator()(WorldVector<double> const& x) const 
   {
-    return std::exp(x*x) + std::cos(10.0 * (x[0] + x[1]));
+    return std::exp(-10.0*(x*x));
   }
 };
 
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
   addSOT(opLaplace, 1.0);
   
   Operator opF(prob.getFeSpace());
-  addZOT(opF, dot(X(), X()) + 1.0); // f(x) = x*x + 1
+  addZOT(opF, -(400.0*(X()*X()) - 40.0)*exp(-10.0*(X()*X()))); 
   
   // ===== add operators to problem =====
   prob.addMatrixOperator(opLaplace, 0, 0);   // -laplace(u)
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 
   // ===== add boundary conditions =====
   BoundaryType nr = 1;
-  prob.addDirichletBC(nr, 0, 0, new G); // g(x) = exp(x*x) + cos(10(x_0 + x_1)))
+  prob.addDirichletBC(nr, 0, 0, new G); 
 
   // ===== create info-object, that holds parameters ===
   AdaptInfo adaptInfo("adapt");
@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
   DOFVector<double> ERR(U);
   
   // the exact solution
-  auto g = exp(X()*X()) + cos(10.0*(X(0) + X(1)));
+  auto g = exp(-10.0*(X()*X()));
   
   // ===== assemble and solve linear system =====
   for (int i = 0; i < 2; ++i) {
