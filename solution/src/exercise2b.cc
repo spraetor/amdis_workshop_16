@@ -13,10 +13,12 @@
 //
 
 #include "AMDiS.h"
-#include "Helpers.h"
 
 #include <array>
 #include <boost/numeric/mtl/mtl.hpp>
+
+using namespace AMDiS;
+
 
 void convergence_factor(std::vector<std::array<double,2>> const& error)
 {
@@ -40,7 +42,20 @@ void convergence_factor(std::vector<std::array<double,2>> const& error)
   std::cout << "\n|u - u_h| = C * h^k\n   C = " << std::exp(convergence(0)) << "\n   k = " << convergence(1) << "\n\n";
 }
 
-using namespace AMDiS;
+inline double calcMeshSizes(Mesh* mesh) 
+{
+  TraverseStack stack;
+  ElInfo *elInfo = stack.traverseFirst(mesh, -1, Mesh::CALL_LEAF_EL | Mesh::FILL_COORDS);
+  double maxH = 0.0;
+  while (elInfo) {
+    auto coords = elInfo->getCoords();
+    for (int i = 0; i < coords.getSize(); i++)
+      for (int j = i+1; j < coords.getSize(); j++)
+	  maxH = std::max(maxH, norm(coords[i] - coords[j]));
+    elInfo = stack.traverseNext(elInfo);
+  }
+  return maxH;
+}
 
 struct G : AbstractFunction<double, WorldVector<double> >
 {
@@ -101,6 +116,8 @@ int main(int argc, char* argv[])
     UExact << u_exact;
     double errorL2 = std::sqrt( integrate( pow<2>(valueOf(U) - valueOf(UExact)) ) );
     double errorH1 = std::sqrt( integrate( pow<2>(valueOf(U) - valueOf(UExact)) + unary_dot(gradientOf(U) - gradientOf(UExact)) ) );
+    
+    double h_max = calcMeshSizes(prob.getMesh());
     
     WorldVector<double> p; p[0] = 0.5; p[1] = 0.5;    
     double errorP = std::abs(U(p) - exp(-10.0*(p*p)));
