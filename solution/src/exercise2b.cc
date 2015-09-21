@@ -37,7 +37,9 @@ void convergence_factor(std::vector<std::array<double,2>> const& error)
   
   mtl::dense_vector<double> b(trans(Q)*rhs_res);
   mtl::irange rows(0,num_cols(A_res));
-  convergence = mtl::matrix::upper_trisolve(R[rows][rows], b[rows]);
+  
+  mtl::dense2D<double> R_ = R[rows][rows];
+  convergence = mtl::matrix::upper_trisolve(R_, b[rows]);
   
   std::cout << "\n|u - u_h| = C * h^k\n   C = " << std::exp(convergence(0)) << "\n   k = " << convergence(1) << "\n\n";
 }
