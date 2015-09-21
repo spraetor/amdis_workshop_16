@@ -1,3 +1,18 @@
+// Example: poisson2
+//
+// Goal: modify the rhs-function f(x) and the coefficient function A
+//       using the expression syntax and AbstractFunctions.
+//
+// Reference: see https://goo.gl/JK8EUI for a detailed description of possible 
+//            expression terms.
+//
+// Compile-and-run: 
+// > cd build
+// > make poisson2
+// > cd ..
+// > build/poisson2 init/poisson2.dat.2d
+//
+
 #include "AMDiS.h"
 
 using namespace AMDiS;

@@ -13,14 +13,14 @@ int main(int argc, char* argv[])
 
   // ===== define operators =====
   Operator opLaplace(prob.getFeSpace(), prob.getFeSpace());
-  addSOT(opLaplace, 1.0);
+  addSOT(opLaplace, 1.0); // <grad(u), grad(theta)>
   
   Operator opF(prob.getFeSpace());
-  addZOT(opF, 1.0);
+  addZOT(opF, 1.0); // <f(x), theta>
   
   // ===== add operators to problem =====
-  prob.addMatrixOperator(opLaplace, 0, 0);    // -laplace(u)
-  prob.addVectorOperator(opF, 0);            // f(x)
+  prob.addMatrixOperator(opLaplace, 0, 0);
+  prob.addVectorOperator(opF, 0);
 
   // ===== add boundary conditions =====
   BoundaryType nr = 1;
@@ -35,6 +35,6 @@ int main(int argc, char* argv[])
   
   // ===== write solution to file =======
   prob.writeFiles(&adaptInfo, true);
-
+  
   AMDiS::finalize();
 }

@@ -1,0 +1,20 @@
+dimension of world:             2
+
+nonlinMesh->macro file name:    ./macro/macro2.2d
+nonlinMesh->global refinements: 10
+
+nonlin->mesh:                   nonlinMesh
+nonlin->dim:                    2
+nonlin->components:             1
+nonlin->polynomial degree[0]:   1
+nonlin->name[0]:                u 
+
+nonlin->solver:                 direct
+nonlin->solver->tolerance:      1.e-10
+
+nonlin->output->filename:       output/nonlin1.2d
+nonlin->output->ParaView format: 1
+
+% define space tolerance and nr of adaption iterations
+adapt[0]->tolerance:          1e-10
+adapt->max iteration:         7

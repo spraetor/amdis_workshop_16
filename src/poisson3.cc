@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
   prob.assemble(&adaptInfo);
   prob.solve(&adaptInfo);
   prob.estimate(&adaptInfo);
+  io::writeFile(prob.getSolution(), "output/poisson_daptive_" + std::to_string(0) + ".vtu");
   
   for (int i = 0; i < adaptInfo.getMaxSpaceIteration(); ++i) {
     std::cout << "Space-iteration " << i << "\n"
@@ -59,6 +60,7 @@ int main(int argc, char* argv[])
     prob.buildAfterCoarsen(&adaptInfo, markFlag);
     prob.solve(&adaptInfo);
     prob.estimate(&adaptInfo);
+    io::writeFile(prob.getSolution(), "output/poisson_daptive_" + std::to_string(i+1) + ".vtu");
   }
   
   // ===== write solution to file =======

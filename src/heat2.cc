@@ -27,13 +27,13 @@ int main(int argc, char* argv[])
 
   // ===== define operators =====
   Operator opMatrix(prob.getFeSpace(), prob.getFeSpace());
-  addZOT(opMatrix, 1.0/ref_(adaptInfo.getTimestepPtr())); // 1/tau * u
+  addZOT(opMatrix, 1.0/var(adaptInfo.getTimestepPtr())); // 1/tau * u
   addSOT(opMatrix, 1.0);  // -laplace(u)
   
   DOFVector<double>& u = *prob.getSolution(0);
   
   Operator opVector(prob.getFeSpace());
-  addZOT(opVector, valueOf(u) / ref_(adaptInfo.getTimestepPtr())); // 1/tau * u_old
+  addZOT(opVector, valueOf(u) / var(adaptInfo.getTimestepPtr())); // 1/tau * u_old
   addZOT(opVector, dot(X(), X()) + 10.0); // f(x) = x*x + 10
   
   // ===== add operators to problem =====
