@@ -1,0 +1,19 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/"><span class="hide-lt-palm">{{ site.title }}</span><span class="visible-lt-palm">{{ site.short-title }}</span></a>
+
+    <nav class="site-nav">
+      <div class="hide-lt-palm">
+        {% for page in site.pages %}
+          {% if page.title %}{% unless page.hidden %}
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endunless %}{% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
+  </div>
+
+</header>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AMDiS-Workshop 2016</title>
+    <description>Der AMDiS Workshop bietet eine Einführung in die Finite-Elemente Software AMDiS die am Institut für Wissenschaftliches Rechnen entwickelt wurde und aktiv weiterentwickelt wird. Ziel ist es, dass die Teilnehmer den ersten Umgang mit  der Software erlernen und dann in der Lage sind, einfache aber auch komplexere  partielle Differentialgleichungen zu lösen. Stationäre oder instationäre Probleme,  in 1d, 2d, 3d oder auf gekrümmten Oberflächen, mit adaptiven Gittern, sequentiell  oder parallel - die Teilnehmer sollen einen Überblick über verschiedene Techniken  erhalten und einen Ausblick auf fortgeschrittene Themen bekommen. 
+</description>
+    <link>http://spraetor.github.io/amdis_workshop_16/</link>
+    <atom:link href="http://spraetor.github.io/amdis_workshop_16/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 28 Jan 2016 18:53:09 +0100</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2016 18:53:09 +0100</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+  </channel>
+</rss>
