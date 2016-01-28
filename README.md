@@ -1,10 +1,10 @@
-# AMDiS Workshop 2015
+# AMDiS Workshop 2016
 
 AMDiS is a finite element framework for adaptive multidimensional
 simulations.
 
 This repository contains all necessary data for the workshop on 
-AMDiS programming in September 2015.
+AMDiS programming in August 2016.
 
 ## Build the examples
 
