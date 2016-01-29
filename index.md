@@ -40,7 +40,7 @@ kann mittels `git clone REPOSITORY` heruntergeladen werden.
 Wir bitten um eine kurze Anmeldung an 
 [simon.praetorius@tu-dresden.de](mailto:simon.praetorius@tu-dresden.de) oder über
 
-<form action="//formspree.io/s.praetorius@googlemail.com" method="POST">
+<form action="//formspree.io/amdis.fem@gmail.com" method="POST">
 <input type="text" name="name" placeholder="Name" /><br />
 <input type="email" name="_replyto" placeholder="E-Mail" /><br />
 <button type="submit">Anmelden</button><br />
