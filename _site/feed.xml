@@ -4,10 +4,10 @@
     <title>AMDiS-Workshop 2016</title>
     <description>Der AMDiS Workshop bietet eine Einführung in die Finite-Elemente Software AMDiS. 
 </description>
-    <link>http://spraetor.github.ioamdis_workshop_16/</link>
-    <atom:link href="http://spraetor.github.ioamdis_workshop_16/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 29 Jan 2016 10:48:37 +0100</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2016 10:48:37 +0100</lastBuildDate>
+    <link>http://spraetor.github.io/amdis_workshop_16/amdis_workshop_16/</link>
+    <atom:link href="http://spraetor.github.io/amdis_workshop_16/amdis_workshop_16/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 29 Jan 2016 10:50:50 +0100</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2016 10:50:50 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
   </channel>
