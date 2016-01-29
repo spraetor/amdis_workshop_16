@@ -4,8 +4,8 @@ short-title: AMDiS-Workshop 2016
 email: simon.praetorius@tu-dresden.de
 description: > # this means to ignore newlines until "baseurl:"
   Der AMDiS Workshop bietet eine Einführung in die Finite-Elemente Software AMDiS. 
-baseurl: ""
-url: "http://spraetor.github.io/amdis_workshop_16"
+baseurl: "amdis_workshop_16"
+url: "http://spraetor.github.io"
 author: Simon Praetorius
 github_username: spraetor
 
