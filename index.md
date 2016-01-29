@@ -13,13 +13,13 @@ Software erlernen und dann in der Lage sind, einfache aber auch komplexere
 partielle Differentialgleichungen zu lösen. 
 
 Stationäre oder instationäre Probleme, in 1d, 2d, 3d oder auf gekrümmten Oberflächen, 
-mit adaptiven Gittern, sequentiell oder parallel – die Teilnehmer sollen einen 
+mit adaptiven Gittern, sequentiell oder parallel - die Teilnehmer sollen einen 
 Überblick über verschiedene Techniken erhalten und einen Ausblick auf fortgeschrittene 
 Themen bekommen. 
 
 ### Modul
 
-Der Workshop ist als Math Ma WIA Modul für Studenten anrechnungsfähig. Einen 
+Der Workshop ist als **Math Ma WIA Modul** für Studenten anrechnungsfähig. Einen 
 Seminarschein kann man erhalten durch Teilnahme und Bearbeitung eines 
 Programmierprojekts, mit Vorstellung der Ergebnisse am Ende der Woche. Die Projekte 
 werden in der Woche durchgeführt und betreut und bauen auf den Grundlagenvorlesungen 
@@ -40,10 +40,10 @@ kann mittels `git clone REPOSITORY` heruntergeladen werden.
 Wir bitten um eine kurze Anmeldung an 
 [simon.praetorius@tu-dresden.de](mailto:simon.praetorius@tu-dresden.de) oder über
 
-<form action="//formspree.io/simon.praetorius@tu-dresden.de" method="POST">
-<input type="text" name="name" placeholder="Name"><br>
-<input type="email" name="_replyto" placeholder="E-Mail" /><br>
-<button type="submit">Anmelden</button><br>
+<form action="//formspree.io/s.praetorius@googlemail.com" method="POST">
+<input type="text" name="name" placeholder="Name" /><br />
+<input type="email" name="_replyto" placeholder="E-Mail" /><br />
+<button type="submit">Anmelden</button><br />
 <input type="hidden" name="_next" value="{{ site.url }}/anmeldung" />
 <input type="hidden" name="_subject" value="AMDiS-Workshop Anmeldung" />
 <input type="text" name="_gotcha" style="display:none" />
