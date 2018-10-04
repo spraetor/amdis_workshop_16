@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
   AMDiS::init(argc, argv);
 
   // ===== create and init the scalar problem ===== 
-  ProblemStat prob("ch");
+  ProblemStat prob("biharmonic");
   prob.initialize(INIT_ALL);
   
   // ===== define operators =====
