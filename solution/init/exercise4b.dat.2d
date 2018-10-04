@@ -1,6 +1,6 @@
 dimension of world:             2
 
-mesh->macro file name:    ./exercises/macro/kanal2.2d
+mesh->macro file name:    ./macro/kanal2.2d
 mesh->global refinements: 5
 
 ns->mesh:         mesh
