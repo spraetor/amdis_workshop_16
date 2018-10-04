@@ -7,7 +7,9 @@
 //            expression terms.
 //
 // Compile-and-run: 
+// > mkdir build
 // > cd build
+// > cmake ..
 // > make exercise1
 // > cd ..
 // > build/exercise1 init/exercise1.dat.2d
