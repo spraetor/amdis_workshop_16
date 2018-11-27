@@ -65,8 +65,9 @@ int main(int argc, char* argv[])
   }
   
   // ===== set initial solution =====
-  for (int i = 0; i < dow; ++i)
+  for (int i = 0; i < dow; ++i) {
     // set initial solution component
+  }
   
   AdaptInstationary adaptInstat("adapt", prob, adaptInfo, instat, adaptInfo);
   adaptInstat.adapt();
